@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student DB</title>
+</head>
+<body>
+    <h2>Student List</h2>
+    <table border="1">
+        <tr><th>ID</th><th>Name</th><th>Age</th><th>Grade</th></tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+            <td>{{ student[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Add New Student</h2>
+    <form method="POST" action="/add">
+        Name: <input type="text" name="name" required><br>
+        Age: <input type="number" name="age" required><br>
+        Grade: <input type="text" name="grade" required><br>
+        <input type="submit" value="Add Student">
+    </form>
+</body>
+</html>
